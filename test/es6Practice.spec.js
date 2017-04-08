@@ -1,3 +1,5 @@
+/*jshint esversion: 6*/
+
 var chai = require('chai');
 var assert = chai.assert;
 // To do: make all tests pass, leave the asserts unchanged!
@@ -8,14 +10,14 @@ describe('`let` restricts the scope of the variable to the current block', () =>
 
     it('`var` works as usual', () => {
       if (true) {
-        let varX = true;
+        var varX = true;
       }
       assert.equal(varX, true);
     });
 
     it('`let` restricts scope to inside the block', () => {
       if (true) {
-        var letX = true;
+        let letX = true;
       }
       assert.throws(() => console.log(letX));
     });
