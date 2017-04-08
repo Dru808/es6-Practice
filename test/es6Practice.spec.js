@@ -27,13 +27,13 @@ describe('`let` restricts the scope of the variable to the current block', () =>
 
     it('`let` use in `for` loops', () => {
       let obj = {x: 1};
-      for (var key in obj) {}
+      for (let key in obj) {}
       assert.throws(() => console.log(key));
     });
 
     it('create artifical scope, using curly braces', () => {
       {
-        var letX = true;
+        let letX = true;
       }
       assert.throws(() => console.log(letX));
     });
